@@ -1,0 +1,74 @@
+/* 
+Styles for OSM Utah website
+*/
+
+/* Load font from local directory */
+@font-face {
+  font-family: "Source Sans";
+  src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+}
+
+/* Basic styles */
+body {
+  font-family: "Source Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1em;
+  margin: 15px 10px;
+  padding: 0;
+  text-align: center;
+}
+
+/* Container for centering content */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.container .footer {
+  text-align: center;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 0.9em;
+    margin: 10px 5px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
