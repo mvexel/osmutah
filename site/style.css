@@ -1,6 +1,4 @@
-/* 
-Styles for OSM Utah website
-*/
+/* Styles for OSM Utah website */
 
 /* Load font from local directory */
 @font-face {
@@ -39,7 +37,6 @@ p {
   font-size: 1em;
   margin: 15px 10px;
   padding: 0;
-  text-align: center;
 }
 
 /* Container for centering content */
@@ -49,8 +46,36 @@ p {
   padding: 20px;
 }
 
-.container .footer {
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start; /* Align items at the start */
+}
+
+.grid-container .image {
   text-align: center;
+}
+
+.grid-container .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at the start */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Small screens */
@@ -70,5 +95,9 @@ p {
 
   .container {
     padding: 10px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
   }
 }
