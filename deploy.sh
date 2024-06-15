@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -avz site/ root@osmutah.org:/srv/osmutah/
+rsync -avz site/ root@95.217.2.38:/srv/osmutah/
