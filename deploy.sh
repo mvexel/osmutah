@@ -1,2 +1,3 @@
 #!/bin/sh
-rsync -avz site/ root@95.217.2.38:/srv/osmutah/
+
+rsync -avz --exclude-from=.rsync_exclude --delete site/ root@osmutah.org:/srv/osmutah
