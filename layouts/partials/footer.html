@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-copy">
+      &copy; {{ now.Year }} {{ .Site.Title }}. Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+    </div>
+    <ul class="footer-links">
+      {{ with .Site.Params.social.mastodon }}<li><a href="{{ . }}" rel="me">Mastodon</a></li>{{ end }}
+      {{ with .Site.Params.social.slack }}<li><a href="{{ . }}">Slack</a></li>{{ end }}
+      {{ with .Site.Params.social.github }}<li><a href="{{ . }}">GitHub</a></li>{{ end }}
+    </ul>
+  </div>
+</footer>

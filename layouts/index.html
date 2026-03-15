@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <h1>{{ .Site.Params.tagline }}</h1>
+    <p>OpenStreetMap is the Wikipedia of Maps &mdash; Anyone can contribute! Maps powered by OpenStreetMap are used by apps like Instagram, Snapchat, Uber, and Lyft. Your contributions reach millions daily.</p>
+    <a href="/our-map-nights/" class="btn">Join our next Map Event</a>
+    <div class="hero-photos">
+      <img src="/img/hero-1.jpeg" alt="OSM Utah community mapping">
+      <img src="/img/hero-2.jpeg" alt="OSM Utah meetup">
+      <img src="/img/hero-3.jpeg" alt="OSM Utah mapping event">
+      <img src="/img/hero-4.jpeg" alt="OSM Utah community">
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <h2 class="section-title">About OpenStreetMap Utah</h2>
+      <p>Established in 2011, we are a group of GIS and mapping enthusiasts from the Salt Lake City area focused on improving OpenStreetMap through monthly meetups and collaborative projects.</p>
+      <p>We hold monthly Map Nights open to the public &mdash; everyone is welcome regardless of experience level.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Latest from the Blog</h2>
+    <div class="post-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,3 +1,46 @@
 baseURL = 'https://osmutah.org/'
 languageCode = 'en-us'
 title = 'OpenStreetMap Utah'
+paginate = 6
+summaryLength = 40
+
+[permalinks]
+  [permalinks.page]
+    blog = '/:slug/'
+  [permalinks.section]
+    blog = '/:slug/'
+
+[menus]
+  [[menus.main]]
+    name = 'Our Events'
+    url = '/our-map-nights/'
+    weight = 10
+  [[menus.main]]
+    name = 'Blog'
+    url = '/blog/'
+    weight = 20
+  [[menus.main]]
+    name = 'Community Resources'
+    url = '/community-resources/'
+    weight = 30
+  [[menus.main]]
+    name = 'Sponsor Us'
+    url = '/sponsor/'
+    weight = 40
+  [[menus.main]]
+    name = 'Contact Us'
+    url = '/contact/'
+    weight = 50
+
+[params]
+  description = "Let's Map Utah Together! OpenStreetMap is the Wikipedia of Maps — Anyone can contribute!"
+  tagline = "Let's Map Utah Together!"
+  [params.social]
+    mastodon = 'https://en.osm.town/@utah'
+    slack = 'http://slack.openstreetmap.us'
+    github = 'https://github.com/osmutah'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
