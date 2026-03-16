@@ -3,15 +3,15 @@
   <div class="container">
     <h1>{{ .Site.Params.tagline }}</h1>
     <p>OpenStreetMap is the Wikipedia of Maps &mdash; Anyone can contribute! Maps powered by OpenStreetMap are used by apps like Instagram, Snapchat, Uber, and Lyft. Your contributions reach millions daily.</p>
-    <a href="/our-map-nights/" class="btn">Join our next Map Event</a>
+    <a href="{{ "our-map-nights/" | absURL }}" class="btn">Join our next Map Event</a>
     <div class="hero-map-wrap">
       <div id="hero-map"></div>
     </div>
     <div class="hero-photos">
-      <img src="{{ "/img/hero-1.jpeg" | absURL }}" alt="OSM Utah community mapping">
-      <img src="{{ "/img/hero-2.jpeg" | absURL }}" alt="OSM Utah meetup">
-      <img src="{{ "/img/hero-3.jpeg" | absURL }}" alt="OSM Utah mapping event">
-      <img src="{{ "/img/hero-4.jpeg" | absURL }}" alt="OSM Utah community">
+      <img src="{{ "img/hero-1.jpeg" | absURL }}" alt="OSM Utah community mapping">
+      <img src="{{ "img/hero-2.jpeg" | absURL }}" alt="OSM Utah meetup">
+      <img src="{{ "img/hero-3.jpeg" | absURL }}" alt="OSM Utah mapping event">
+      <img src="{{ "img/hero-4.jpeg" | absURL }}" alt="OSM Utah community">
     </div>
   </div>
 </section>
@@ -37,8 +37,8 @@
   </div>
 </section>
 <script>
-  fetch('/map/style.json').then(function(r) { return r.json(); }).then(function(style) {
-    style.sprite = window.location.origin + '/map/sprites/sprite';
+  fetch('{{ "map/style.json" | absURL }}').then(function(r) { return r.json(); }).then(function(style) {
+    style.sprite = '{{ "map/sprites/sprite" | absURL }}';
     var map = new maplibregl.Map({
       container: 'hero-map',
       style: style,

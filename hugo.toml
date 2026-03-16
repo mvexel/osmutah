@@ -1,8 +1,6 @@
 baseURL = 'https://mvexel.github.io/osmutah/'
 languageCode = 'en-us'
 title = 'OpenStreetMap Utah'
-canonifyURLs = true
-relativeURLs = true
 [pagination]
   pagerSize = 6
 summaryLength = 40
