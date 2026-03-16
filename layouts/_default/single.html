@@ -9,6 +9,17 @@
     {{ end }}
   </div>
 </header>
+{{ if .Params.image }}
+  <div class="page-featured-image">
+    {{ $resource := .Resources.GetMatch .Params.image }}
+    {{ if $resource }}
+      {{ $scaled := $resource.Resize "1200x" }}
+      <img src="{{ $scaled.RelPermalink }}" alt="{{ .Title }}">
+    {{ else }}
+      <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+    {{ end }}
+  </div>
+{{ end }}
 <div class="page-content">
   {{ .Content }}
 </div>

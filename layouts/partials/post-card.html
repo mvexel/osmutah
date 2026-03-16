@@ -1,12 +1,19 @@
 <article class="post-card">
-  {{ with .Params.image }}
-  <a href="{{ $.Permalink }}">
-    <img class="post-card-img" src="{{ . }}" alt="{{ $.Title }}">
-  </a>
+  {{ $image := .Params.image }}
+  {{ if $image }}
+    <a href="{{ .RelPermalink }}">
+      {{ $resource := .Resources.GetMatch $image }}
+      {{ if $resource }}
+        {{ $scaled := $resource.Resize "600x" }}
+        <img class="post-card-img" src="{{ $scaled.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+      {{ else }}
+        <img class="post-card-img" src="{{ $image | relURL }}" alt="{{ .Title }}" loading="lazy">
+      {{ end }}
+    </a>
   {{ end }}
   <div class="post-card-body">
     <div class="post-card-date">{{ .Date.Format "January 2, 2006" }}</div>
-    <h3 class="post-card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <h3 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     <p class="post-card-summary">{{ .Summary }}</p>
   </div>
 </article>
