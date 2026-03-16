@@ -4,6 +4,9 @@
     <h1>{{ .Site.Params.tagline }}</h1>
     <p>OpenStreetMap is the Wikipedia of Maps &mdash; Anyone can contribute! Maps powered by OpenStreetMap are used by apps like Instagram, Snapchat, Uber, and Lyft. Your contributions reach millions daily.</p>
     <a href="/our-map-nights/" class="btn">Join our next Map Event</a>
+    <div class="hero-map-wrap">
+      <div id="hero-map"></div>
+    </div>
     <div class="hero-photos">
       <img src="/img/hero-1.jpeg" alt="OSM Utah community mapping">
       <img src="/img/hero-2.jpeg" alt="OSM Utah meetup">
@@ -33,4 +36,34 @@
     </div>
   </div>
 </section>
+<script>
+  fetch('/map/style.json').then(function(r) { return r.json(); }).then(function(style) {
+    style.sprite = window.location.origin + '/map/sprites/sprite';
+    var map = new maplibregl.Map({
+      container: 'hero-map',
+      style: style,
+      center: [-111.891, 40.758],
+      zoom: 13,
+      interactive: false,
+      attributionControl: false
+    });
+    map.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right');
+    map.addControl(new maplibregl.FullscreenControl(), 'top-right');
+    document.addEventListener('fullscreenchange', function() {
+      if (document.fullscreenElement) {
+        map.scrollZoom.enable();
+        map.dragPan.enable();
+        map.touchZoomRotate.enable();
+        map.doubleClickZoom.enable();
+        map.keyboard.enable();
+      } else {
+        map.scrollZoom.disable();
+        map.dragPan.disable();
+        map.touchZoomRotate.disable();
+        map.doubleClickZoom.disable();
+        map.keyboard.disable();
+      }
+    });
+  });
+</script>
 {{ end }}

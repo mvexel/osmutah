@@ -1,0 +1,34 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+  </div>
+</header>
+
+{{ with .Params.next_event }}
+<section class="next-event">
+  <div class="container">
+    <div class="next-event-card">
+      <span class="next-event-label">Next Event</span>
+      <h2 class="next-event-name">{{ .name }}</h2>
+      <div class="next-event-details">
+        <div class="next-event-detail">
+          <strong>{{ .date }}</strong> &middot; {{ .time }}
+        </div>
+        <div class="next-event-detail">
+          {{ with .location_url }}<a href="{{ . }}">{{ end }}{{ .location }}{{ with .location_url }}</a>{{ end }}
+          <br>{{ .address }}
+        </div>
+      </div>
+      {{ with .rsvp_url }}
+      <a href="{{ . }}" class="btn btn-lg">RSVP Now</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<div class="page-content">
+  {{ .Content }}
+</div>
+{{ end }}

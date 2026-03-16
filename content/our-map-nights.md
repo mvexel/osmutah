@@ -1,17 +1,18 @@
 ---
 title: "Our Events"
 url: /our-map-nights/
+layout: events
+next_event:
+  name: "Map Night"
+  date: "Tuesday March 10, 2026"
+  time: "6pm–8pm"
+  location: "Woodbine Food Hall"
+  address: "545 W 700 S, Salt Lake City"
+  location_url: "https://www.woodbineslc.com/"
+  rsvp_url: "https://osmcal.org/event/4609/"
 ---
 
 We hold monthly **Map Nights** on the second Tuesday of each month. All experience levels are welcome!
-
-## Next Event
-
-**Map Night**
-Tuesday March 10, 2026, 6pm–8pm
-[Woodbine Food Hall](https://www.woodbineslc.com/), 545 W 700 S, Salt Lake City
-
-[RSVP on OSM Calendar](https://osmcal.org/event/4609/)
 
 ## Mall Mapping Sessions
 
