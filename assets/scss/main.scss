@@ -421,6 +421,18 @@ p { margin-bottom: 1em; }
   font-size: 0.9rem;
 }
 
+.page-featured-image {
+  max-width: $text-max;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
 .page-content {
   max-width: $text-max;
   margin: 0 auto;
