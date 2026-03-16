@@ -1,7 +1,8 @@
 baseURL = 'https://osmutah.org/'
 languageCode = 'en-us'
 title = 'OpenStreetMap Utah'
-paginate = 6
+[pagination]
+  pagerSize = 6
 summaryLength = 40
 
 [permalinks]
