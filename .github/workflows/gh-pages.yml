@@ -32,23 +32,22 @@ jobs:
     env:
       HUGO_VERSION: 0.140.2
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
       - name: Install Dart Sass
         run: |
-          curl -LJO https://github.com/sass/dart-sass/releases/download/1.83.0/dart-sass-1.83.0-linux-x64.tar.gz
-          tar -xvf dart-sass-1.83.0-linux-x64.tar.gz
-          echo "$(pwd)/dart-sass" >> $GITHUB_PATH
+          curl -L https://github.com/sass/dart-sass/releases/download/1.83.0/dart-sass-1.83.0-linux-x64.tar.gz | tar -xz
+          echo "${{ github.workspace }}/dart-sass" >> $GITHUB_PATH
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
 
       - name: Setup Pages
         id: pages
