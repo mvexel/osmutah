@@ -1,7 +1,7 @@
 <nav class="site-nav">
   <div class="container">
     <a href="/" class="nav-brand">
-      <img src="/img/osm_logo.png" alt="OSM Logo">
+      <img src="{{ "/img/osm_logo.png" | absURL }}" alt="OSM Logo">
       {{ .Site.Title }}
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
